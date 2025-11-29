@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="24dp">
+
+    <!-- 1. HEADER: Nút X và Tiêu đề -->
+    <ImageView
+        android:id="@+id/btnClose"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_close"
+        app:tint="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:layout_marginStart="16dp"
+
+        app:layout_constraintStart_toEndOf="@id/btnClose"
+        app:layout_constraintTop_toTopOf="@id/btnClose"
+        app:layout_constraintBottom_toBottomOf="@id/btnClose"/>
+    <!-- Đã sửa lỗi ở 2 dòng trên: Neo cả trên và dưới vào nút Close để căn giữa -->
+
+    <!-- 2. THÔNG TIN NGƯỜI DÙNG -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvAvatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnClose">
+
+        <ImageView
+            android:id="@+id/imgUserAvatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:src=""
+            android:scaleType="centerCrop" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Tên Người Dùng"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@id/cvAvatar"
+        app:layout_constraintTop_toTopOf="@id/cvAvatar"/>
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="email@example.com"
+        android:textColor="#888888"
+        android:textSize="12sp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@id/cvAvatar"
+        app:layout_constraintTop_toBottomOf="@id/tvName"/>
+
+    <!-- 3. KHUNG NHẬP LIỆU LỚN -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_post_box"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/cvAvatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Ô nhập chữ -->
+        <EditText
+            android:id="@+id/edtContent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@null"
+            android:hint="Write something..."
+            android:gravity="top|start"
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btnUpload"/>
+
+        <!-- Icon Upload -->
+        <ImageView
+            android:id="@+id/btnUpload"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_upload"
+            app:tint="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Icon Ảnh -->
+        <ImageView
+            android:id="@+id/btnGallery"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_image"
+            app:tint="#000000"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnUpload"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 4. NÚT ADD TASK -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAddTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add task"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:background="@drawable/bg_button_gray"
+
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
