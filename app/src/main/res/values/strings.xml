@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">messeger</string>
+    <string name="profile_title">Profile</string>
+    <string name="work_position_hint">Work Position</string>
+    <string name="work_position_text">Head of business department</string>
+    <string name="full_name_hint">Full name</string>
+    <string name="full_name_text">Puerto Rico</string>
+    <string name="phone_number_hint">Phone number</string>
+    <string name="phone_number_text">123-456-7890</string>
+    <string name="email_hint">Email</string>
+    <string name="email_text">email@gmail.com</string>
+    <string-array name="gender_array">
+        <item>Female</item>
+        <item>Male</item>
+    </string-array>
+    <string-array name="countries_array">
+        <item>United States</item>
+        <item>Canada</item>
+        <item>Mexico</item>
+    </string-array>
 </resources>
